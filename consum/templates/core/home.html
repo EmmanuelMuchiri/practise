@@ -1,0 +1,35 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <a class="btn btn-primary" href="{% url 'social:begin' 'google-oauth2' %}">
+    Login
+  </a>
+  <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+
+
+
+
+  {% block content %}
+  <h2>GEO API</h2>
+  <p>The following are your IPS <strong>mannu</strong>,
+    have a look at them
+    {% for em in email%}
+    <ul>
+      <li>
+        <strong>{{ em }}</strong> right now.</p>
+  </li>
+  </ul>
+  {% endfor %}
+  {% endblock %}
+</body>
+
+</html>
